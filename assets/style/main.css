@@ -1,0 +1,53 @@
+@import url(./reset.css);
+
+main {
+    padding: 0 20px;
+}
+
+main section {
+    display: flex;
+    padding: 20px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.home-icon {
+    display: flex;
+    flex: .6;
+}
+
+.card {
+    max-width: 480px;
+    padding: 24px;
+    color: white;
+    background: linear-gradient(#212121, #212121) padding-box,
+        linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
+    cursor: pointer;
+    transform-origin: right bottom;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card .categories span {
+    background-color: var(--color-th);
+    padding: 4px 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 50em;
+}
+
+.card > span {
+    font-weight: 600;
+    color: #717171;
+    margin-right: 4px;
+}
+
+.card:hover {
+    rotate: 1deg;
+}
