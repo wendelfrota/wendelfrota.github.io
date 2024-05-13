@@ -3,8 +3,10 @@
 header {
     position: fixed;
     width: 100%;
-    padding: 16px 24px;
+    padding: 20px 40px;
     justify-content: space-between;
+    background-color: var(--color-main);
+    z-index: 1;
 }
 
 nav li{
@@ -23,6 +25,21 @@ nav a{
 nav a:hover{
     scale: 1.1;
 }
+
+.logo,
+.logo::before{
+    background-size: 500%;
+    background-clip: text;
+    -webkit-background-clip: text; 
+}
+
+.logo:hover,
+.logo:hover::before {
+    color: transparent;
+    background-image: linear-gradient(to right, var(--color-em) 0% 50%, var(--color-th) 50% 100%);
+    animation: loader 1.2s forwards;
+}
+
 
 .toggle-switch {
     width: 80px;

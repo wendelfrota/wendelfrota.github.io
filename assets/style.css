@@ -4,13 +4,29 @@
 
 h1{
     color: var(--color-em);
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 900;
+    text-align: center;
+    text-wrap: nowrap;
+}
+
+h1::before{
+    content: "/";
+    display: inline-block;
+    scale: 1.3;
+    letter-spacing: 8px;
+}
+
+h2{
     text-wrap: nowrap;
 }
 
 a{
     text-decoration: none;
+}
+
+p {
+    font-size: 1.2rem;
 }
 
 .flex-container {
@@ -24,7 +40,21 @@ a{
     align-items: center;
 }
 
-.geometric_background{
+.center-item{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 3px;
+}
+
+.center-topic{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+
+.geometric-background{
     background: radial-gradient(circle farthest-side at 0% 50%,
             #282828 23.5%,
             rgba(255, 170, 0, 0) 0) 21px 30px,
@@ -55,4 +85,34 @@ a{
             #282828 0) 0 0,
         linear-gradient(90deg, #2c3539 2%, #282828 0, #282828 98%, #2c3539 0%) 0 0 #282828;
     background-size: 40px 60px;
+}
+
+.card-background{
+    background: linear-gradient(#212121, #212121) padding-box,
+    linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    border: 2px solid transparent;
+    border-radius: 8px;
+}
+
+.web-category{
+    color: #E34C26;
+}
+
+.kt-category{
+    color: #6B47D2;
+}
+
+.project-category{
+    color: #f6ff00;
+}
+
+.second-project-category{
+    color: #6B47D2;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    gap: 8px;
 }

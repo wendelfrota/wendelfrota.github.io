@@ -11,7 +11,7 @@
     --color-sec: #121212;
     --color-th: #e81cff;
     --color-em: #6B47D2;
-    --color-gray: #8C8C8E;
+    --color-gray: #717171;
 
     --font-main: Arial, Helvetica, sans-serif;
 }
@@ -45,4 +45,10 @@ body::-webkit-scrollbar-thumb:hover {
 
 body::-webkit-scrollbar-thumb:active {
     background-color: var(--color-main);
+}
+
+@keyframes loader {
+    100% {
+      background-position: -100% 0;
+    }
 }
