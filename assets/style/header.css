@@ -3,7 +3,6 @@
 header {
     position: fixed;
     width: 100%;
-    padding: 20px 40px;
     justify-content: space-between;
     background-color: var(--color-main);
     z-index: 1;
@@ -11,7 +10,6 @@ header {
 
 nav li {
     margin: 0 16px;
-    list-style-type: none;
 }
 
 nav a {
@@ -75,6 +73,12 @@ nav a:hover {
 .switch-theme input { 
     opacity: 0;
     cursor: pointer;
+}
+
+@keyframes loader {
+    100% {
+      background-position: -100% 0;
+    }
 }
 
 @keyframes keyframes-fill {
