@@ -1,7 +1,42 @@
 @import url(./reset.css);
 
+footer {
+    background-image: url('../img/background/footer.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 footer p {
     font-size: 1.4rem;
+}
+
+.footer-links{
+    max-width: 450px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a{
+    color: var(--color-gray);
+    display: block;
+    transition: .2s;
+}
+
+.footer-links a:hover{
+    color: var(--color-em);
+    scale: 1.05;
+}
+
+.footer-links a::before{
+    margin-right: 8px;
+    content: "\2192";
+    font-size: .8em;
+}
+
+.contact{
+    max-width: 300px;
 }
 
 .contact-content ul{
@@ -50,15 +85,15 @@ footer p {
     box-shadow: 3px 2px 45px 0px rgb(0 0 0 / 12%);
 }
 
-.icon-content a svg {
+.icon-content a img {
     position: relative;
     z-index: 1;
     width: 30px;
     height: 30px;
 }
 
-.icon-content a:hover {
-    color: white;
+.icon-content a:hover img{
+    filter: invert(100%);
 }
 
 .icon-content a .filled {

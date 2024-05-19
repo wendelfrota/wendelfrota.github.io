@@ -51,20 +51,6 @@ header{
     padding: 20px 40px;
 }
 
-main,
-footer{
-    padding: 0 20px;
-}
-
-section {
-    display: flex;
-    padding: 20px;
-    height: 100vh;
-    justify-content: space-evenly;
-    align-items: center;
-    overflow: hidden;
-}
-
 h1{
     color: var(--color-em);
     font-size: 2rem;
