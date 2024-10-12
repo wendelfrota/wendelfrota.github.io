@@ -68,6 +68,12 @@
         border-radius: 12px;
         box-shadow: 0 14px 80px rgba(34, 35, 58, 0.5);
         overflow: hidden;
+        transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .card:hover{
+        transform: scale(1.02) rotate(.5deg);
+        box-shadow: 0 20px 80px rgba(34, 35, 58, .8);
     }
 
     .card-text{
@@ -105,7 +111,8 @@
     }
 
     .social-links a{
-        margin: 0 5px;
+        color: var(--color-em-2);
+        margin: 0 6px;
     }
 
     .fade-in {
