@@ -18,7 +18,9 @@ import NavComponent from '@/components/NavComponent.vue'
     header{
         display: flex;
         align-items: center;
-        padding: 20px;
+        padding: 8px 2rem;
+        background-color: var(--color-em-2);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
 
     img{
