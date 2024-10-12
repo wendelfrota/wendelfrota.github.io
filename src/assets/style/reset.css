@@ -52,12 +52,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-body{
-    color: white;
-    background: var(--color-main);
-    font-family: var(--font-main);
-}
-
 body::-webkit-scrollbar {
     width: 12px;
 }
@@ -77,29 +71,6 @@ body::-webkit-scrollbar-thumb:hover {
 
 body::-webkit-scrollbar-thumb:active {
     background-color: var(--color-main);
-}
-
-header{
-    padding: 20px 40px;
-}
-
-h1{
-    color: var(--color-em);
-    font-size: 2rem;
-    font-weight: 900;
-    text-align: center;
-    text-wrap: nowrap;
-}
-
-h1::before{
-    content: "/";
-    display: inline-block;
-    scale: 1.3;
-    letter-spacing: 8px;
-}
-
-h2{
-    text-wrap: nowrap;
 }
 
 a{
