@@ -1,18 +1,22 @@
 <template>
     <section>
-        <div class="text-container fade-in">
-            <h1>Hello! I'm Wendel</h1>
-            <p>A developer passionate about AI, cybersecurity, and cutting-edge technology.</p>
-        
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/wendel-frota-11649b279" target="_blank">LinkedIn &#x1F855;</a>
-                <a href="https://github.com/wendelfrota" target="_blank">GitHub &#x1F855;</a>
-                <a href="https://www.instagram.com/wendel.dev_" target="_blank">Instagram &#x1F855;</a>
-            </div>
-        </div>
+        <div class="card fade-in">
+            <div id="profile-background"></div>
+            <div id="avatar-image"></div>
+            
+            <div class="card-text">
+                <div>
+                    <h2>Software Developer</h2>
+                    <h1>Wendel Frota</h1>
+                </div>
+                <p>A developer passionate about AI, cybersecurity, and cutting-edge technology.</p>
 
-        <div class="image-container">
-            <img src="@/assets/img/wendel/wendel.jpeg" alt="Wendel's photo">
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/wendel-frota-11649b279" target="_blank">LinkedIn &#x1F855;</a>
+                    <a href="https://github.com/wendelfrota" target="_blank">GitHub &#x1F855;</a>
+                    <a href="https://www.instagram.com/wendel.dev_" target="_blank">Instagram &#x1F855;</a>
+                </div>
+            </div>
         </div>
     </section>
 </template>
@@ -22,64 +26,72 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        flex-wrap: wrap;
-        gap: 24px;
     }
 
-    .text-container {
-        max-width: 912px;
-        padding: 16px;
-        box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1);
-        border-radius: 12px;
-        background-color: white;
-        text-align: center;
+    h1, 
+    h2 {
+        text-wrap: nowrap;
     }
 
     h1 {
-        font-size: 3.2rem;
+        color: var(--color-em-1);
+        font-size: 2.2rem;
+    }
+
+    h2 {
         color: var(--color-th-1);
+        font-size: 1.2rem;
     }
 
     p {
-        font-size: 2.4rem;
-        color: var(--color-em-2);
+        font-size: 1.2rem;
     }
 
-    .social-links {
-        margin-top: 20px;
+    .card {
+        display: flex;
+        position: relative;
+        background: #fff;
+        max-width: 800px;
+        height: 500px;
+        border-radius: 12px;
+        box-shadow: 0 14px 80px rgba(34, 35, 58, 0.5);
+        overflow: hidden;
     }
 
-    a {
-        color: var(--color-em-1);
-        font-weight: bold;
-        font-size: 1.4rem;
-        margin: 0 8px;
-        transition: color .3s;
+    .card-text{
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
-    .image-container {
-        height: 768px;
+    .card-text h2{
+        text-align: right
     }
 
-    img {
-        border-radius: 2%;
+    #profile-background {
+        width: 100%;
         height: 100%;
-        box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1);
+        background-image: url("@/assets/img/wendel/wendel_gym.png");
+        background-position: bottom center;
+        background-size: cover;
     }
 
-    @media (max-width: 768px) {
-        h1 {
-            font-size: 2.4rem;
-        }
+    #avatar-image {
+        background-image: url('@/assets/img/wendel/wendel.jpeg');
+        background-position: center;
+        background-size: cover;
+        width: 80px;
+        height: 80px;
+        position: absolute;
+        border-radius: 50%;
+        border: 4px solid var(--color-em-2);
+    }
 
-        p {
-            font-size: 1.8rem;
-        }
-
-        .image-container {
-            height: 480px;
-            text-align: center;
-        }
+    .social-links a{
+        margin: 0 5px;
     }
 
     .fade-in {
@@ -89,7 +101,7 @@
     @keyframes fadeIn {
         from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
         }
         to {
             opacity: 1;
