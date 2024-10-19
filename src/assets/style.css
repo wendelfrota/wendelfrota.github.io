@@ -2,8 +2,6 @@
 
 @import './style/reset.css';
 @import './style/header.css';
-@import './style/main.css';
-@import './style/footer.css';
 
 :root {
   --color-main: #19191C;
