@@ -7,13 +7,15 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+    <nav aria-label="External Navigation - Social Medias">
+            <ul>
+                <li><a href="https://www.linkedin.com/in/wendel-frota-11649b279" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/wendelfrota" target="_blank">GitHub</a></li>
+            </ul>
+        </nav>
 </template>
 
 <style scoped>
-    nav{
-        width: 100%;
-    }
-
     nav ul {
         display: flex;
         align-items: center;
