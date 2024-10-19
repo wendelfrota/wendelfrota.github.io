@@ -20,12 +20,12 @@ import NavComponent from '@/components/NavComponent.vue'
     }
 
     .logo-container{
-        max-width: 256px;
+        max-width: 128px;
     }
 
     @media (max-width: 768px) {
         .logo-container {
-            max-width: 128px;
+            max-width: 96px;
         }
     }
 </style>

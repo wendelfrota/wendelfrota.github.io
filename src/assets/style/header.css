@@ -1,7 +1,18 @@
-header{
+header {
     display: flex;
     align-items: center;
-    padding: 8px 2rem;
+    justify-content: space-between;
     position: fixed;
-    width: 100%;
+    top: .875rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80vw;
+    max-width: 1280px;
+    padding: 8px 2rem;
+    background-color: rgba(0, 0, 0, .25);
+    backdrop-filter: blur(10px);
+    border: 2px solid var(--color-em-1);
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+    z-index: 1;
 }
