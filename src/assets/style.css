@@ -7,7 +7,7 @@
 
 :root {
   --color-main: #19191C;
-  --color-sec: #121212;
+  --color-sec: #0d0015;
   --color-th-1: #e81cff;
   --color-th-2: #9D4EDD;
   --color-em-1: #6B47D2; 
@@ -22,10 +22,13 @@ html {
 }
 
 body {
+  --custom-color: #7f8fa40d;
   min-height: 100vh;
-  background: var(--color-main);
-  background-size: cover;
-  background-position: center;
+  background-color: var(--color-sec);
+  background-image: linear-gradient(0deg, transparent 20%, var(--custom-color) 20.3%, var(--custom-color) 21.7%, transparent 22%, transparent 70%, var(--custom-color) 70.3%, var(--custom-color) 71.7%, transparent 72%, transparent), 
+                  linear-gradient(90deg, transparent 20%, var(--custom-color) 20.3%, var(--custom-color) 21.7%, transparent 22%, transparent 70%, var(--custom-color) 70.3%, var(--custom-color) 71.7%, transparent 72%, transparent);
+  background-size: 120px 120px;
+  background-attachment: fixed;
   transition: color .3s ease-in-out, background-color .3s ease-in-out;
   font-family:
     'Poppins',
