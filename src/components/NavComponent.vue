@@ -5,35 +5,34 @@ function toggleMenu() {
     const navElements = document.querySelectorAll('header nav');
 
     navElements.forEach(nav => {
-        if (nav.style.display === 'none' || nav.style.display === '') {
-            nav.style.display = 'block';
-        } else {
-            nav.style.display = 'none';
-        }
+        nav.classList.toggle('menu');
     });
 }
 </script>
 
 <template>
-    <HamburgerIcon @click="toggleMenu" />
-
     <nav aria-label="Main Navigation">
         <ul>
-            <li><a href="#home" aria-current="page">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <div class="internal-navigation">
+                <li><a href="#home" aria-current="page">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </div>
+            <div class="external-navigation">
+                <li><a href="https://www.linkedin.com/in/wendel-frota-11649b279" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/wendelfrota" target="_blank">GitHub</a></li>
+            </div>
         </ul>
     </nav>
-    <nav aria-label="External Navigation - Social Medias">
-        <ul>
-            <li><a href="https://www.linkedin.com/in/wendel-frota-11649b279" target="_blank">LinkedIn</a></li>
-            <li><a href="https://github.com/wendelfrota" target="_blank">GitHub</a></li>
-        </ul>
-    </nav>
+    <HamburgerIcon @click="toggleMenu" />
 </template>
 
 <style scoped>
+    nav{
+        width: 100%;
+    }
+
     nav ul {
         display: flex;
         align-items: center;
@@ -50,6 +49,50 @@ function toggleMenu() {
 
     nav a:hover {
         color: var(--color-th-1);
+    }
+
+    .internal-navigation{
+        margin: auto;
+    }
+
+    .external-navigation {
+        margin-left: 0;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        display: block;
+        width: 100%;
+        padding: 2rem;
+        background-color: rgba(0, 0, 0, .25);
+        backdrop-filter: blur(10px);
+        outline: 2px solid var(--color-em-1);
+        border-radius: 20px;
+    }
+
+    .menu ul {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .menu + svg{
+        z-index: 0;
+    }
+
+    .menu .internal-navigation,
+    .menu .external-navigation {
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .internal-navigation,
+    .external-navigation {
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 
     @media (max-width: 1023px) {

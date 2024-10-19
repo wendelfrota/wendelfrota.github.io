@@ -14,6 +14,7 @@
 <style scoped>
 svg{
     color: white;
+    cursor: pointer;
     font-size: 1.5rem;
     display: none;
 }
