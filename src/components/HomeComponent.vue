@@ -34,7 +34,7 @@ import ChevronIcon from '@/components/icons/ChevronIcon.vue';
 
     .hero-content {
         text-align: center;
-        max-width: 56rem;
+        max-width: 52.5vw;
     }
 
     h1, h2, h3{
@@ -73,5 +73,35 @@ import ChevronIcon from '@/components/icons/ChevronIcon.vue';
 
     .icon-arrow a:hover {
         transform: translateY(-6px);
+    }
+
+    @media (max-width: 1023px) {
+        .hero-content {
+            max-width: 75vw;
+        }
+        h1 {
+            font-size: 2.1rem;
+        }
+        h2 {
+            font-size: 1.6rem;
+        }
+        h3 {
+            font-size: 1.2rem;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .hero-content {
+            max-width: 100%;
+        }
+        h1 {
+            font-size: 1.8rem;
+        }
+        h2 {
+            font-size: 1.5rem;
+        }
+        h3 {
+            font-size: 1.1rem;
+        }
     }
 </style>
