@@ -42,14 +42,36 @@ import ChevronIcon from '@/components/icons/ChevronIcon.vue';
     }
 
     h1 {
-        font-size: 2.8em;
+        font-size: 2.8rem;
+        font-weight: 900;
+        letter-spacing: .4px;
     }
+
     h2 {
-        font-size: 2.2em;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-bottom: 24px;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #7D3C98;
+        color: var(--color-em-1);
+        margin-bottom: 10px;
     }
 
     .icon-arrow svg{
         margin-top: 1.2rem;
         transform: rotate(90deg);
+    }
+
+    .icon-arrow a {
+        display: inline-block;
+        transition: transform .3s ease-in-out;
+    }
+
+    .icon-arrow a:hover {
+        transform: translateY(-6px);
     }
 </style>
