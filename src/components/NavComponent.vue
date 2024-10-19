@@ -1,4 +1,22 @@
+<script setup>
+import HamburgerIcon from '@/components/icons/HamburgerIcon.vue'
+
+function toggleMenu() {
+    const navElements = document.querySelectorAll('header nav');
+
+    navElements.forEach(nav => {
+        if (nav.style.display === 'none' || nav.style.display === '') {
+            nav.style.display = 'block';
+        } else {
+            nav.style.display = 'none';
+        }
+    });
+}
+</script>
+
 <template>
+    <HamburgerIcon @click="toggleMenu" />
+
     <nav aria-label="Main Navigation">
         <ul>
             <li><a href="#home" aria-current="page">Home</a></li>
@@ -8,11 +26,11 @@
         </ul>
     </nav>
     <nav aria-label="External Navigation - Social Medias">
-            <ul>
-                <li><a href="https://www.linkedin.com/in/wendel-frota-11649b279" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/wendelfrota" target="_blank">GitHub</a></li>
-            </ul>
-        </nav>
+        <ul>
+            <li><a href="https://www.linkedin.com/in/wendel-frota-11649b279" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/wendelfrota" target="_blank">GitHub</a></li>
+        </ul>
+    </nav>
 </template>
 
 <style scoped>
@@ -30,8 +48,18 @@
         transition: color .2s;
     }
 
-    nav a:hover{
+    nav a:hover {
         color: var(--color-th-1);
+    }
+
+    @media (max-width: 1023px) {
+        nav {
+            display: none;
+        }
+
+        svg {
+            display: block;
+        }
     }
 
     @media (max-width: 768px) {
