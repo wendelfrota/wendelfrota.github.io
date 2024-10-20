@@ -4,7 +4,7 @@ import TechSliderComponent from '@/components/TechSliderComponent.vue';
 </script>
 
 <template>
-    <section>
+    <section id="home">
         <div class="background-overlay"></div>
 
         <div class="hero-content">
