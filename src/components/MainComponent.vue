@@ -1,10 +1,12 @@
 <script setup>
 import HomeComponent from '@/components/HomeComponent.vue'
+import ProjectsComponent from '@/components/ProjectsComponent.vue'
 </script>
 
 <template>
     <main>
         <HomeComponent />
+        <ProjectsComponent />
     </main>
 </template>
 
