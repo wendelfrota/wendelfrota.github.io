@@ -71,4 +71,19 @@ onMounted(async () => {
     transform: translateX(-50%);
   }
 }
+
+@media (max-width: 1023px) {
+  .slider-container {
+    width: 90%;
+  }
+  .tech-slider {
+    animation: moveX 14s linear infinite;
+  }
+}
+
+@media (max-width: 767px) {
+  .slider-container {
+    width: 95%;
+  }
+}
 </style>
