@@ -21,6 +21,10 @@ onMounted(async () => {
         <component :is="Component" />
         <span>{{ name.replace('Icon', '') }}</span>
       </div>
+      <div class="tech-item" v-for="(Component, name) in techComponents" :key="name">
+        <component :is="Component" />
+        <span>{{ name.replace('Icon', '') }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -28,43 +32,43 @@ onMounted(async () => {
 
 <style>
 .slider-container {
-    width: 80%;
-    height: auto;
-    overflow: hidden;
-    position: absolute;
-    bottom: 1rem;
+  width: 80%;
+  height: auto;
+  overflow: hidden;
+  position: absolute;
+  bottom: 1rem;
 }
 
 .tech-slider {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    width: max-content;
-    animation: moveX 20s linear infinite;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: max-content;
+  animation: moveX 20s linear infinite;
 }
 
 .tech-item {
-    color: white;
-    font-size: 1rem;
-    padding: 6px 20px;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    border: 1px solid var(--color-gray);
-    border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  padding: 6px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--color-gray);
+  border-radius: 8px;
 }
 
 .tech-item svg {
-    width: 2rem;
-    height: auto;
+  width: 2rem;
+  height: auto;
 }
 
 @keyframes moveX {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 </style>
