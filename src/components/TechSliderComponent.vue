@@ -1,51 +1,67 @@
+<script setup>
+import { ref, onMounted } from 'vue';
+
+const icons = import.meta.glob('@/components/icons/technologies/*.vue');
+const techComponents = ref({});
+
+onMounted(async () => {
+  for (const path in icons) {
+    const mod = await icons[path]();
+    const componentName = path.split('/').pop().replace('.vue', '');
+
+    techComponents.value[componentName] = mod.default;
+  }
+});
+</script>
+
 <template>
+  <div class="slider-container">
     <div class="tech-slider">
-        <div class="tech-item"> Python </div>
-        <div class="tech-item"> PyTorch </div>
-        <div class="tech-item"> TensorFlow </div>
-        <div class="tech-item"> Flask </div>
-        <div class="tech-item"> C </div>
-        <div class="tech-item"> C++ </div>
-        <div class="tech-item"> C# </div>
-        <div class="tech-item"> Rust </div>
-        <div class="tech-item"> Java </div>
-        <div class="tech-item"> Kotlin </div>
-        <div class="tech-item"> HTML </div>
-        <div class="tech-item"> CSS </div>
-        <div class="tech-item"> JavaScript </div>
-        <div class="tech-item"> Node.Js </div>
-        <div class="tech-item"> Express.Js </div>
-        <div class="tech-item"> Vue.Js </div>
-        <div class="tech-item"> Arch Linux </div>
-        <div class="tech-item"> Debian </div>
-        <div class="tech-item"> MySQL </div>
-        <div class="tech-item"> PostgreSQL </div>
-        <div class="tech-item"> Git </div>
+      <div class="tech-item" v-for="(Component, name) in techComponents" :key="name">
+        <component :is="Component" />
+        <span>{{ name.replace('Icon', '') }}</span>
+      </div>
     </div>
+  </div>
 </template>
 
+
 <style>
+.slider-container {
+    width: 80%;
+    height: auto;
+    overflow: hidden;
+    position: absolute;
+    bottom: 1rem;
+}
+
 .tech-slider {
     display: flex;
     align-items: center;
     gap: 8px;
     width: max-content;
     animation: moveX 20s linear infinite;
-    position: absolute;
-    bottom: 1rem;
 }
 
 .tech-item {
     color: white;
-    font-size: 1.2rem;
-    padding: 6px 24px;
+    font-size: 1rem;
+    padding: 6px 20px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
     border: 1px solid var(--color-gray);
     border-radius: 8px;
 }
 
+.tech-item svg {
+    width: 2rem;
+    height: auto;
+}
+
 @keyframes moveX {
     0% {
-        transform: translateX(100vw);
+        transform: translateX(0);
     }
     100% {
         transform: translateX(-100%);
