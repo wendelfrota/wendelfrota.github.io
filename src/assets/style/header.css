@@ -2,6 +2,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    line-height: 0;
     position: fixed;
     top: .875rem;
     left: 50%;
