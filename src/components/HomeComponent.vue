@@ -1,5 +1,6 @@
 <script setup>
 import ChevronIcon from '@/components/icons/ChevronIcon.vue';
+import TechSliderComponent from '@/components/TechSliderComponent.vue';
 </script>
 
 <template>
@@ -18,10 +19,18 @@ import ChevronIcon from '@/components/icons/ChevronIcon.vue';
                 </a>
             </span>
         </div>
+
+        <TechSliderComponent />
     </section>
 </template>
 
 <style scoped>
+    section {
+        overflow: hidden;
+        flex-direction: column;
+        position: relative;
+    }
+
     .background-overlay {
         position: fixed;
         height: 100%;
