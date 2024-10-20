@@ -74,6 +74,7 @@ function selectProject(index) {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    max-width: 50vw;
 }
 
 .navigation-buttons {
