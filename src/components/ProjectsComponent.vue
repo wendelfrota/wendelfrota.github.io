@@ -59,7 +59,7 @@ function selectProject(index) {
                     :key="index"
                     :style="project.img ? { backgroundImage: `url(${project.img})` } : {}"
                     @click="selectProject(index)"
-                    :class="{ active: currentIndex.value === index }"
+                    :class="{ active: currentIndex === index }"
                 >
                 </button>
 
