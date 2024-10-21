@@ -100,6 +100,10 @@ function toggleMenu() {
             display: none;
         }
 
+        nav {
+            line-height: 1;
+        }
+
         svg {
             display: block;
         }
