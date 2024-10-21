@@ -10,25 +10,25 @@ import cotilMapsImg from '@/assets/img/projects/cotil-maps.png';
 const projects = [
     {
         title: 'Tor Http Client',
-        description: 'Biblioteca HTTP para requisições na rede Tor.',
+        description: 'Tor HTTP Client is a tool designed to make HTTP requests through the Tor network, ensuring enhanced privacy and anonymity. It supports multiple HTTP methods (GET, POST, PUT, DELETE) and integrates seamlessly with Tor, allowing users to route their requests through an anonymous network. This project is ideal for those looking to enhance their online privacy while making HTTP requests in a customizable and secure manner.',
         link: 'https://github.com/wendelfrota/tor-http-client/',
         img: thcImg
     },
     {
         title: 'JurAI',
-        description: 'Projeto para consultas jurídicas com inteligência artificial.',
+        description: 'JurAI is an innovative tool designed for lawyers that enhances efficiency and streamlines workflows. Available on web, mobile, and desktop platforms, JurAI automates repetitive tasks and provides intelligent legal insights. Its AI-driven features analyze documents, research precedents, estimate the probability of winning a case, suggest the best arguments, and generate complete petitions, making it an essential companion for modern legal practice.',
         link: 'https://github.com/jurai-git/',
         img: juraiImg
     },
     {
         title: 'Opensync',
-        description: 'Sistema de hospedagem de imagens.',
+        description: 'Opensync is a self-hosted, lightweight image and file storage platform designed for setting up your own cloud storage server. Built with performance in mind, it utilizes SQLite and C to ensure minimal overhead. Completely open source and licensed under GPL 3.0, Opensync operates without telemetry or financial motivations. Its minimalistic approach focuses on essential features, providing users with a straightforward and efficient storage solution.',
         link: 'https://github.com/mgcvale/opensync-website/',
         img: opensyncImg
     },
     {
         title: 'Cotil Maps',
-        description: 'Mapeamento interativo do campus do Cotil.',
+        description: 'COTIL Maps is a website developed to help new students and visitors easily find their way around the Colégio Técnico de Limeira (COTIL). The project provides an interactive map of the campus with an intuitive interface, perfect for events like COPA (COTIL de Portas Abertas). Designed to prevent students from feeling lost in their first days, COTIL Maps aims to make navigating the school easier and more efficient.',
         link: 'https://github.com/wendelfrota/cotil-maps/',
         img: cotilMapsImg
     }
@@ -45,22 +45,13 @@ function selectProject(index) {
 <template>
     <section id="projects">
         <div class="projects-container">
-            <ProjectComponent
-                v-if="currentProject"
-                :title="currentProject.title"
-                :description="currentProject.description"
-                :link="currentProject.link"
-                :img="currentProject.img"
-            />
+            <ProjectComponent v-if="currentProject" :title="currentProject.title"
+                :description="currentProject.description" :link="currentProject.link" :img="currentProject.img" />
 
             <div class="navigation-buttons">
-                <button
-                    v-for="(project, index) in projects"
-                    :key="index"
-                    :style="project.img ? { backgroundImage: `url(${project.img})` } : {}"
-                    @click="selectProject(index)"
-                    :class="{ active: currentIndex === index }"
-                >
+                <button v-for="(project, index) in projects" :key="index"
+                    :style="project.img ? { backgroundImage: `url(${project.img})` } : {}" @click="selectProject(index)"
+                    :class="{ active: currentIndex === index }">
                 </button>
 
                 <button>See more</button>
