@@ -16,23 +16,17 @@
             Message:
             <textarea name="message" placeholder="Your Message" required></textarea>
         </label>
-
-        <button type="submit">Send message</button>
+        <button type="submit">Submit message</button>
     </form>
 </template>
 
 <style scoped>
 form {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    padding: 2rem 3rem;
-    background-color: rgba(0, 0, 0, .25);
-    backdrop-filter: blur(10px);
-    border: 2px solid var(--color-em-1);
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
 }
 
 label {
@@ -66,9 +60,9 @@ textarea {
 button {
     cursor: pointer;
     color: white;
-    font-size: 1.1rem;
+    font-size: 1rem;
     margin-top: 1rem;
-    padding: .5rem 1.5rem;
+    padding: .75rem 1.8rem;
     border: none;
     border-radius: 50px;
     background-color: var(--color-em-1);
