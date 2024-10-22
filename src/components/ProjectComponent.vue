@@ -1,6 +1,6 @@
 <template>
   <div class="project-card">
-    <img :src="img" alt="Project image" />
+    <img :src="img" alt="Project image" @click="openModal" />
 
     <div class="project-description">
       <h4>Featured Project</h4>
@@ -12,11 +12,18 @@
         <a :href="link" target="_blank" rel="noopener noreferrer">View project</a>
       </span>
     </div>
+
+    <div v-if="isModalOpen" class="modal" @click="closeModal">
+      <div class="modal-content" @click.stop>
+        <span class="close" @click="closeModal">&times;</span>
+        <img :src="img" alt="Expanded project image" class="expanded-image" />
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, ref } from 'vue';
 
 const props = defineProps({
   title: {
@@ -36,7 +43,18 @@ const props = defineProps({
     required: true
   }
 });
+
+const isModalOpen = ref(false);
+
+const openModal = () => {
+  isModalOpen.value = true;
+};
+
+const closeModal = () => {
+  isModalOpen.value = false;
+};
 </script>
+
 
 <style scoped>
 .project-card {
@@ -107,6 +125,42 @@ img {
   width: auto;
   height: 100%;
   border-radius: 8px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: white;
+  font-size: 30px;
+}
+
+.expanded-image {
+  width: 100%;
+  height: auto;
 }
 
 @media (max-width: 1539px) {
