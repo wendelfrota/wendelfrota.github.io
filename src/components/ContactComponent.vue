@@ -17,7 +17,7 @@
             <textarea name="message" placeholder="Your Message" required></textarea>
         </label>
 
-        <button type="submit">Send</button>
+        <button type="submit">Send message</button>
     </form>
 </template>
 
@@ -27,9 +27,7 @@ form {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    max-width: 768px;
-    height: 60%;
-    padding: 2rem;
+    padding: 2rem 3rem;
     background-color: rgba(0, 0, 0, .25);
     backdrop-filter: blur(10px);
     border: 2px solid var(--color-em-1);
@@ -44,36 +42,37 @@ label {
 
 input, 
 textarea {
+    color: white;
+    font-size: 1rem;
     width: 100%;
     padding: .5rem;
     margin-top: .5rem;
     border: 1px solid var(--color-em-1);
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.1);
-    color: white;
 }
 
 input:focus, 
 textarea:focus {
-    border-color: var(--color-em-1);
     outline: none;
+    border-color: var(--color-em-1);
     box-shadow: 0 0 6px var(--color-em-1);
 }
 
 textarea {
-    height: 128px;
     resize: none;
 }
 
 button {
-    color: white;
     cursor: pointer;
+    color: white;
+    font-size: 1.1rem;
     margin-top: 1rem;
     padding: .5rem 1.5rem;
     border: none;
-    border-radius: 6px;
+    border-radius: 50px;
     background-color: var(--color-em-1);
-    transition: background-color 0.3s;
+    transition: background-color .3s;
 }
 
 button:hover {
