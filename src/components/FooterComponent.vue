@@ -34,7 +34,7 @@ onMounted(() => {
 <style scoped>
 footer {
     color: white;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,8 +63,10 @@ button:hover {
 }
 
 dialog {
+    width: 42vw;
+    margin: auto;
     padding: 2rem 3rem;
-    background-color: rgba(0, 0, 0, .25);
+    background-color: rgba(0, 0, 0, .5);
     backdrop-filter: blur(10px);
     border: 2px solid var(--color-em-1);
     border-radius: 8px;
