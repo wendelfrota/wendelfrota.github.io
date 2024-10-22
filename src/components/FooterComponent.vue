@@ -22,7 +22,7 @@ onMounted(() => {
         <button id="contact-btn">Send a message</button>
 
         <dialog id="contact-dialog" @close="closeDialog">
-            <ContactComponent />
+            <ContactComponent :onClose="closeDialog" />
         </dialog>
 
         <div class="copyright-container">
@@ -68,9 +68,14 @@ dialog {
     padding: 2rem 3rem;
     background-color: rgba(0, 0, 0, .5);
     backdrop-filter: blur(10px);
-    border: 2px solid var(--color-em-1);
+    border: 2px solid var(--color-em-2);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, .5);
+    backdrop-filter: blur(10px);
 }
 
 .copyright-container {
@@ -78,5 +83,28 @@ dialog {
     bottom: 0;
     left: 0;
     padding: .75rem 2rem;
+}
+
+@media (max-width: 1023px) {
+    h1 {
+            font-size: 2.1rem;
+    }
+    dialog {
+        width: 67.5vw;
+    }
+    button {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 767px) {
+    h1 {
+            font-size: 1.8rem;
+    }
+    dialog {
+        width: 82.5vw;
+    }
+    button {
+        font-size: .875rem;
+    }
 }
 </style>

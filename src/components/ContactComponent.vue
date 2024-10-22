@@ -1,3 +1,17 @@
+<script setup>
+import { ref } from 'vue';
+
+const props = defineProps({
+    onClose: Function
+});
+
+const closeDialog = () => {
+    if (props.onClose) {
+        props.onClose();
+    }
+};
+</script>
+
 <template>
     <form action="https://formspree.io/f/xvgogakd" method="POST">
         <div>
@@ -8,7 +22,10 @@
             <textarea name="message" placeholder="Type your message here..." required></textarea>
         </div>
 
-        <button type="submit">Submit message</button>
+        <div class="group-btn">
+            <button id="close-btn" type="button" @click="closeDialog">Close</button>
+            <button id="submit-btn" type="submit">Submit message</button>
+        </div>
     </form>
 </template>
 
@@ -43,24 +60,42 @@ textarea:focus {
 }
 
 textarea {
-    height: 50%;
+    height: 60%;
     resize: none;
 }
 
-button {
+.group-btn {
     width: 100%;
+    display: flex;
+    gap: 6px;
+}
+
+#submit-btn {
+    border: 2px solid var(--color-em-1);
+    flex: 1;
+}
+
+#close-btn {
+    background-color: var(--color-em-2);
+    flex: .1;
+}
+
+button {
     cursor: pointer;
     color: white;
     font-size: 1rem;
     margin-top: 3rem;
-    padding: .75rem 1.8rem;
+    padding: .5rem 1.8rem;
     border: none;
-    border-radius: 12px;
-    background-color: var(--color-em-1);
+    border-radius: 6px;
     transition: background-color .3s;
 }
 
-button:hover {
-    background-color: darken(var(--color-em-1), 10%);
+#close-btn:hover {
+    background-color: darken(var(--color-em-2), 10%);
+}
+
+#submit-btn:hover {
+    background-color: var(--color-em-1);
 }
 </style>
