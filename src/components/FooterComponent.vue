@@ -10,6 +10,21 @@ const closeDialog = () => {
     document.getElementById('contact-dialog').close();
 };
 
+document.addEventListener('DOMContentLoaded', function () {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            } else {
+                entry.target.classList.remove('visible');
+            }
+        });
+    });
+
+    const e = document.querySelectorAll('.drop-animation');
+    e.forEach(el => observer.observe(el));
+});
+
 onMounted(() => {
     const btn = document.getElementById('contact-btn');
     btn.addEventListener('click', openDialog);
@@ -18,8 +33,8 @@ onMounted(() => {
 
 <template>
     <footer id="contact">
-        <h1>Bring your ideas to life</h1>
-        <button id="contact-btn">Send a message</button>
+        <h1 class="drop-animation">Bring your ideas to life</h1>
+        <button id="contact-btn" class="drop-animation">Send a message</button>
 
         <dialog id="contact-dialog" @close="closeDialog">
             <ContactComponent :onClose="closeDialog" />
@@ -32,6 +47,18 @@ onMounted(() => {
 </template>
 
 <style scoped>
+.drop-animation {
+    transform: translateY(-40px);
+    opacity: 0;
+    transition: transform 0.8s ease-out, opacity 0.5s ease-out;
+    margin: 20px 0;
+}
+
+.drop-animation.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 footer {
     color: white;
     height: 100dvh;
