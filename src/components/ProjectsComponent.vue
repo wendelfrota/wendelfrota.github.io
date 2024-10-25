@@ -43,7 +43,7 @@ function selectProject(index) {
 </script>
 
 <template>
-    <section id="projects">
+    <section id="projects" v-drop-animation>
         <div class="projects-container">
             <ProjectComponent v-if="currentProject" :title="currentProject.title"
                 :description="currentProject.description" :link="currentProject.link" :img="currentProject.img" />
