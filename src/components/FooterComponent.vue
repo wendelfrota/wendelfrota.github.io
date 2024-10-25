@@ -47,18 +47,6 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.drop-animation {
-    transform: translateY(-40px);
-    opacity: 0;
-    transition: transform 0.8s ease-out, opacity 0.5s ease-out;
-    margin: 20px 0;
-}
-
-.drop-animation.visible {
-    transform: translateY(0);
-    opacity: 1;
-}
-
 footer {
     color: white;
     height: 100dvh;
