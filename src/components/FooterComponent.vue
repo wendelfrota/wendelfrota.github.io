@@ -11,19 +11,6 @@ const closeDialog = () => {
 };
 
 onMounted(() => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            } else {
-                entry.target.classList.remove('visible');
-            }
-        });
-    });
-
-    const elements = document.querySelectorAll('.drop-animation');
-    elements.forEach(el => observer.observe(el));
-
     const btn = document.getElementById('contact-btn');
     if (btn) {
         btn.addEventListener('click', openDialog);
@@ -32,9 +19,9 @@ onMounted(() => {
 </script>
 
 <template>
-    <footer id="contact">
-        <h1 class="drop-animation">Bring your ideas to life</h1>
-        <button id="contact-btn" class="drop-animation">Send a message</button>
+    <footer id="contact" v-drop-animation>
+        <h1>Bring your ideas to life</h1>
+        <button id="contact-btn">Send a message</button>
 
         <dialog id="contact-dialog" @close="closeDialog">
             <ContactComponent :onClose="closeDialog" />
