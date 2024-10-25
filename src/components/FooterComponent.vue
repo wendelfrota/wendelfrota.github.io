@@ -10,7 +10,7 @@ const closeDialog = () => {
     document.getElementById('contact-dialog').close();
 };
 
-document.addEventListener('DOMContentLoaded', function () {
+onMounted(() => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -21,13 +21,13 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    const e = document.querySelectorAll('.drop-animation');
-    e.forEach(el => observer.observe(el));
-});
+    const elements = document.querySelectorAll('.drop-animation');
+    elements.forEach(el => observer.observe(el));
 
-onMounted(() => {
     const btn = document.getElementById('contact-btn');
-    btn.addEventListener('click', openDialog);
+    if (btn) {
+        btn.addEventListener('click', openDialog);
+    }
 });
 </script>
 
