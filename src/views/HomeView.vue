@@ -1,13 +1,11 @@
 <script setup>
-import HomeComponent from '@/components/HomeComponent.vue';
-import ProjectsComponent from '@/components/ProjectsComponent.vue';
-import TechnologiesComponent from '@/components/TechnologiesComponent.vue';
-import AboutComponent from '@/components/AboutComponent.vue';
+import HeaderComponent from '@/components/HeaderComponent.vue';
+import MainComponent from '@/components/MainComponent.vue';
+import FooterComponent from '@/components/FooterComponent.vue';
 </script>
 
 <template>
-  <HomeComponent />
-  <ProjectsComponent />
-  <TechnologiesComponent />
-  <AboutComponent />
+    <HeaderComponent />
+    <MainComponent />
+    <FooterComponent />
 </template>

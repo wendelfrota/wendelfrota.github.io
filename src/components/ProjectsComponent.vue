@@ -1,84 +1,96 @@
+<script setup>
+import { ref, computed } from 'vue';
+import ProjectComponent from '@/components/ProjectComponent.vue';
+
+import thcImg from '@/assets/img/projects/thc.png';
+import juraiImg from '@/assets/img/projects/jurai.png';
+import opensyncImg from '@/assets/img/projects/opensync.png';
+import cotilMapsImg from '@/assets/img/projects/cotil-maps.png';
+
+const projects = [
+    {
+        title: 'Tor Http Client',
+        description: 'Tor HTTP Client is a tool designed to make HTTP requests through the Tor network, ensuring enhanced privacy and anonymity. It supports multiple HTTP methods (GET, POST, PUT, DELETE) and integrates seamlessly with Tor, allowing users to route their requests through an anonymous network. This project is ideal for those looking to enhance their online privacy while making HTTP requests in a customizable and secure manner.',
+        link: 'https://github.com/wendelfrota/tor-http-client/',
+        img: thcImg
+    },
+    {
+        title: 'JurAI',
+        description: 'JurAI is an innovative tool designed for lawyers that enhances efficiency and streamlines workflows. Available on web, mobile, and desktop platforms, JurAI automates repetitive tasks and provides intelligent legal insights. Its AI-driven features analyze documents, research precedents, estimate the probability of winning a case, suggest the best arguments, and generate complete petitions, making it an essential companion for modern legal practice.',
+        link: 'https://github.com/jurai-git/',
+        img: juraiImg
+    },
+    {
+        title: 'Opensync',
+        description: 'Opensync is a self-hosted, lightweight image and file storage platform designed for setting up your own cloud storage server. Built with performance in mind, it utilizes SQLite and C to ensure minimal overhead. Completely open source and licensed under GPL 3.0, Opensync operates without telemetry or financial motivations. Its minimalistic approach focuses on essential features, providing users with a straightforward and efficient storage solution.',
+        link: 'https://github.com/mgcvale/opensync-website/',
+        img: opensyncImg
+    },
+    {
+        title: 'Cotil Maps',
+        description: 'COTIL Maps is a website developed to help new students and visitors easily find their way around the Colégio Técnico de Limeira (COTIL). The project provides an interactive map of the campus with an intuitive interface, perfect for events like COPA (COTIL de Portas Abertas). Designed to prevent students from feeling lost in their first days, COTIL Maps aims to make navigating the school easier and more efficient.',
+        link: 'https://github.com/wendelfrota/cotil-maps/',
+        img: cotilMapsImg
+    }
+];
+
+const currentIndex = ref(0);
+const currentProject = computed(() => projects[currentIndex.value]);
+
+function selectProject(index) {
+    currentIndex.value = index;
+}
+</script>
+
 <template>
-    <section id="projects">
-        <div class="carousel geometric-background">
-            <h1>Projetos</h1>
+    <section id="projects" v-drop-animation>
+        <div class="projects-container">
+            <ProjectComponent v-if="currentProject" :title="currentProject.title"
+                :description="currentProject.description" :link="currentProject.link" :img="currentProject.img" />
 
-            <div class="carousel-content">
-                <div class="card card-background">
-                    <h2 class="web-category">Cotil Maps</h2>
+            <div class="navigation-buttons">
+                <button v-for="(project, index) in projects" :key="index"
+                    :style="project.img ? { backgroundImage: `url(${project.img})` } : {}" @click="selectProject(index)"
+                    :class="{ active: currentIndex === index }">
+                </button>
 
-                    <div class="text">
-                        <p>O COTIL Maps é um site desenvolvido por alunos, para alunos. O site conta com mapas de toda a
-                            área do
-                            COTIL, de modo a auxiliar na localização de alunos novos ou externos que estejam
-                            frequentando o colégio
-                            em
-                            ocasiões como o COPA (COTIL de Portas Abertas), de uma maneira intuitiva e de fácil uso.</p>
-                    </div>
-
-                    <img src="../assets/img/projects/cotil-maps-desktop.png" alt="Cotil Maps">
-
-                    <div class="categories">
-                        <span>Web</span>
-                    </div>
-
-                    <span>Projeto escolar</span>
-
-                </div>
-
-                <div class="card card-background">
-                    <h2 class="project-category">JurAI</h2>
-
-                    <div class="text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam perspiciatis obcaecati ex
-                            dolor nobis
-                            ipsam inventore ducimus quaerat? Voluptates ad impedit reiciendis quasi nemo explicabo odit
-                            in.</p>
-                        <p>Ipsum aperiam voluptate quod, at sequi et porro libero, aliquam nobis harum doloribus tenetur
-                            nihil
-                            consectetur explicabo sint saepe cum dolor eveniet?</p>
-                    </div>
-
-                    <img src="../assets/img/projects/jurai-logo.jpeg" alt="JurAI Logo">
-
-                    <div class="categories">
-                        <span>Web</span>
-                        <span>Mobile</span>
-                        <span>Desktop</span>
-                        <span>Data Science</span>
-                    </div>
-
-                    <span>TCC - em desenvolvimento</span>
-
-                </div>
-
-                <div class="card card-background">
-                    <h2 class="second-project-category">PDCast</h2>
-
-                    <div class="text">
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse voluptates quo sequi? Porro
-                            accusantium
-                            itaque repudiandae placeat consequuntur autem harum cum veniam. Debitis quia consectetur
-                            ipsa hic velit
-                            voluptate quis!</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam atque eos eveniet porro
-                            corporis quia
-                            quibusdam fuga at non quis.</p>
-                    </div>
-
-                    <img src="../assets/img/projects/pdcast.jpg"
-                        alt="PDCast - O podcast dos alunos de Desenvolvimento de Sistemas do COTIL">
-
-                    <div class="categories">
-                        <span>Social</span>
-                    </div>
-
-                    <span>Projeto escolar</span>
-                </div>
-
+                <button>See more</button>
             </div>
-
-            <a href="./projetos.html">Todos os projetos</a>
         </div>
     </section>
 </template>
+
+<style scoped>
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 50vw;
+}
+
+.navigation-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.navigation-buttons button {
+    cursor: pointer;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--color-em-1);
+    border-radius: 6px;
+    background-size: cover;
+    background-position: center;
+    transition: transform .3s;
+}
+
+.navigation-buttons button.active {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(108, 71, 210, 0.25);
+}
+
+.navigation-buttons button:hover {
+    transform: scale(1.05);
+}
+</style>
