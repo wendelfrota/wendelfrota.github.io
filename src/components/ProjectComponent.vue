@@ -122,8 +122,8 @@ a:hover {
 }
 
 img {
-  width: auto;
-  height: 100%;
+  height: auto;
+  width: 100%;
   border-radius: 8px;
 }
 
