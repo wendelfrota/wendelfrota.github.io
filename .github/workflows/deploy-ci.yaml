@@ -1,7 +1,7 @@
 name: wendelfrota.github.io - Deploy
 
 on:
-  pull_request:
+  push:
     branches:
       - main
 
