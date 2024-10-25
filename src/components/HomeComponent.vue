@@ -7,7 +7,7 @@ import TechSliderComponent from '@/components/TechSliderComponent.vue';
     <section id="home">
         <div class="background-overlay"></div>
 
-        <div class="hero-content">
+        <div class="hero-content" v-drop-animation>
             <h1>Hi! I’m Wendel Frota.</h1>
             <h2>A developer passionate about AI, cybersecurity, and cutting-edge technology.</h2>
             
@@ -20,7 +20,7 @@ import TechSliderComponent from '@/components/TechSliderComponent.vue';
             </span>
         </div>
 
-        <TechSliderComponent />
+        <TechSliderComponent  v-drop-animation/>
     </section>
 </template>
 
