@@ -105,6 +105,7 @@ form {
   border-radius: 16px;
   background-color: rgba(0, 0, 0, .5);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 30px rgba(0, 0, 0, .1);
   border: 1px solid rgba(255, 255, 255, .1);
 }
@@ -167,9 +168,8 @@ textarea:focus {
 }
 
 textarea {
-  height: 150px;
-  resize: vertical;
-  min-height: 100px;
+  height: 120px;
+  resize: none;
 }
 
 .button-group {
@@ -210,13 +210,78 @@ textarea {
   background: rgba(255, 255, 255, 0.15);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 640px) {
+  .contact-form {
+    padding: 1.25rem;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-container {
+    gap: 1.5rem;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+  }
+
   .input-row {
     grid-template-columns: 1fr;
+    gap: .75rem;
   }
-  
-  form {
-    padding: 1.5rem;
+
+  .form-group {
+    gap: .75rem;
+    overflow-y: auto;
+    padding-right: .5rem;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  .button-group {
+    margin-top: .5rem;
+    padding: .5rem 0;
+    position: sticky;
+    bottom: 0;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: .625rem 1.25rem;
+    font-size: .875rem;
+  }
+
+  .form-group::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  .form-group::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, .05);
+    border-radius: 4px;
+  }
+
+  .form-group::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, .2);
+    border-radius: 4px;
+  }
+}
+
+@media (max-height: 600px) {
+  .contact-form {
+    max-height: 85vh;
+  }
+
+  textarea {
+    height: 80px;
+  }
+
+  .form-title {
+    font-size: 1.25rem;
   }
 }
 </style>
