@@ -68,11 +68,9 @@ dialog {
     width: 42vw;
     margin: auto;
     padding: 2rem 3rem;
-    background-color: rgba(0, 0, 0, .5);
+    background-color: transparent;
     backdrop-filter: blur(10px);
-    border: 2px solid var(--color-em-2);
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+    border: none;
 }
 
 dialog::backdrop {
