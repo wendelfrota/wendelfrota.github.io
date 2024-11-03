@@ -69,6 +69,7 @@ function toggleMenu() {
         padding: 2rem;
         background-color: rgba(0, 0, 0, .25);
         backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         outline: 2px solid var(--color-em-1);
         border-radius: 20px;
     }
