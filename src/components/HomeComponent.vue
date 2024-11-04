@@ -43,7 +43,7 @@ import TechSliderComponent from '@/components/TechSliderComponent.vue';
 
     .hero-content {
         text-align: center;
-        max-width: 52.5vw;
+        width: min(100%, 968px);
     }
 
     h1, h2, h3{
@@ -51,19 +51,19 @@ import TechSliderComponent from '@/components/TechSliderComponent.vue';
     }
 
     h1 {
-        font-size: 2.8rem;
+        font-size: clamp(1.5rem, 4.8vw, 2.7rem);
         font-weight: 900;
         letter-spacing: .4px;
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: clamp(.9rem, 3vw, 2rem);
         font-weight: 600;
-        margin-bottom: 24px;
+        margin-bottom: 1.2rem;
     }
 
     h3 {
-        font-size: 1.6rem;
+        font-size: clamp(1rem, 3vw, 1.7rem);
         font-weight: 600;
         color: #7D3C98;
         color: var(--color-em-1);
@@ -73,44 +73,15 @@ import TechSliderComponent from '@/components/TechSliderComponent.vue';
     .icon-arrow svg{
         margin-top: 1.2rem;
         transform: rotate(90deg);
+        width: clamp(2.6rem, 5vw, 4rem);
     }
 
     .icon-arrow a {
         display: inline-block;
         transition: transform .3s ease-in-out;
     }
-
+    
     .icon-arrow a:hover {
         transform: translateY(-6px);
-    }
-
-    @media (max-width: 1023px) {
-        .hero-content {
-            max-width: 75vw;
-        }
-        h1 {
-            font-size: 2.1rem;
-        }
-        h2 {
-            font-size: 1.6rem;
-        }
-        h3 {
-            font-size: 1.2rem;
-        }
-    }
-
-    @media (max-width: 767px) {
-        .hero-content {
-            max-width: 100%;
-        }
-        h1 {
-            font-size: 1.8rem;
-        }
-        h2 {
-            font-size: 1.5rem;
-        }
-        h3 {
-            font-size: 1.1rem;
-        }
     }
 </style>
