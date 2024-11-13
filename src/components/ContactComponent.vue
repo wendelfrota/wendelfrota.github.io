@@ -211,7 +211,7 @@ textarea {
 }
 
 @media (max-width: 640px) {
-  .contact-form {
+  form {
     padding: 1.25rem;
     max-height: 90vh;
     overflow-y: auto;
@@ -272,7 +272,7 @@ textarea {
 }
 
 @media (max-height: 600px) {
-  .contact-form {
+  form {
     max-height: 85vh;
   }
 
