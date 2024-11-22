@@ -61,6 +61,7 @@ const closeModal = () => {
   position: relative;
   padding: 16px;
   border-radius: 8px;
+  left: -20%;
 }
 
 .project-description {
@@ -68,10 +69,10 @@ const closeModal = () => {
   flex-direction: column;
   justify-content: space-between;
   padding: 1.6rem 2rem;
-  max-width: 80%;
-  max-height: 100%;
+  max-width: 40%;
+  height: calc(100% - 32px);
   position: absolute;
-  right: -25%;
+  right: calc(-40% + 8px);
   top: 50%;
   transform: translate(0, -50%);
   background-color: rgba(0, 0, 0, 0.25);
@@ -122,9 +123,14 @@ a:hover {
 }
 
 img {
-  height: auto;
-  width: 100%;
+  width: auto;
+  height: 100%;
   border-radius: 8px;
+  transition: transform .3s;
+}
+
+.project-card > img:hover {
+  transform: scale(1.005);
 }
 
 .modal {
@@ -142,8 +148,8 @@ img {
 
 .modal-content {
   position: relative;
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 100%;
+  max-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -163,13 +169,11 @@ img {
   height: auto;
 }
 
-@media (max-width: 1539px) {
-  .project-description {
-    max-width: 87.5%;
-  }
-}
-
 @media (max-width: 1023px) {
+  .project-description {
+    max-width: 100%;
+  }
+  
   p {
     font-size: .875rem;
   }
