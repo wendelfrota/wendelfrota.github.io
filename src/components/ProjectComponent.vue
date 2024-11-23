@@ -12,14 +12,15 @@
         <a :href="link" target="_blank" rel="noopener noreferrer">View project</a>
       </span>
     </div>
-
+  </div>
+  <Teleport to="body">
     <div v-if="isModalOpen" class="modal" @click="closeModal">
       <div class="modal-content" @click.stop>
         <span class="close" @click="closeModal">&times;</span>
         <img :src="img" alt="Expanded project image" class="expanded-image" />
       </div>
     </div>
-  </div>
+  </Teleport>
 </template>
 
 <script setup>
@@ -61,6 +62,7 @@ const closeModal = () => {
   position: relative;
   padding: 16px;
   border-radius: 8px;
+  left: -20%;
 }
 
 .project-description {
@@ -68,10 +70,10 @@ const closeModal = () => {
   flex-direction: column;
   justify-content: space-between;
   padding: 1.6rem 2rem;
-  max-width: 80%;
-  max-height: 100%;
+  max-width: 40%;
+  height: calc(100% - 32px);
   position: absolute;
-  right: -25%;
+  right: calc(-40% + 8px);
   top: 50%;
   transform: translate(0, -50%);
   background-color: rgba(0, 0, 0, 0.25);
@@ -122,18 +124,22 @@ a:hover {
 }
 
 img {
-  height: auto;
-  width: 100%;
+  width: auto;
+  height: 100%;
   border-radius: 8px;
+  transition: transform .3s;
+}
+
+.project-card > img:hover {
+  transform: scale(1.005);
 }
 
 .modal {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .8);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,8 +148,9 @@ img {
 
 .modal-content {
   position: relative;
-  max-width: 80%;
-  max-height: 80%;
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -152,24 +159,23 @@ img {
 .close {
   cursor: pointer;
   position: absolute;
-  top: 10px;
-  right: 20px;
+  top: -40px;
+  right: 0;
   color: white;
   font-size: 30px;
 }
 
 .expanded-image {
-  width: 100%;
-  height: auto;
-}
-
-@media (max-width: 1539px) {
-  .project-description {
-    max-width: 87.5%;
-  }
+  max-width: 100%;
+  max-height: 90vh;
+  object-fit: contain;
 }
 
 @media (max-width: 1023px) {
+  .project-description {
+    max-width: 100%;
+  }
+  
   p {
     font-size: .875rem;
   }

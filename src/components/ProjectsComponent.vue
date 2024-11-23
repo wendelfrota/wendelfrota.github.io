@@ -65,7 +65,7 @@ function selectProject(index) {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    max-width: 50vw;
+    max-width: clamp(256px, 50vw, 60vw);
 }
 
 .navigation-buttons {
