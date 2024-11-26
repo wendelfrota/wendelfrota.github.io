@@ -45,7 +45,10 @@
     width: min(90%, 1000px);
     text-align: center;
     color: white;
-    padding: 2rem;
+    padding: 3rem 2rem;
+    background-color: rgba(0, 0, 0, .6);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, .3);
 }
 
 h1 {
@@ -57,9 +60,9 @@ h1 {
 
 .about-description p {
     font-size: clamp(.9rem, 3vw, 1.2rem);
-    line-height: 1.6;
-    margin-bottom: 1rem;
-    color: rgba(255, 255, 255, .9);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: rgba(255, 255, 255, 0.85);
 }
 
 .skills-container {
@@ -76,7 +79,6 @@ h1 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 1rem;
-    margin-bottom: 2rem;
 }
 
 .skill-item {
@@ -90,5 +92,6 @@ h1 {
 .skill-item:hover {
     transform: scale(1.05);
     background-color: rgba(125, 60, 152, .4);
+    box-shadow: 0 4px 15px rgba(125, 60, 152, .4);
 }
 </style>
