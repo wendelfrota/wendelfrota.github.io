@@ -23,8 +23,8 @@
                 <div class="skills-grid">
                     <div class="skill-item">AI & Machine Learning</div>
                     <div class="skill-item">Cybersecurity</div>
-                    <div class="skill-item">Web Development</div>
-                    <div class="skill-item">Cloud Computing</div>
+                    <div class="skill-item">Low-Level Systems</div>
+                    <div class="skill-item">Linux Development</div>
                 </div>
             </div>
         </div>
