@@ -39,76 +39,82 @@
     align-items: center;
     min-height: 100vh;
     overflow: hidden;
+    padding: 1rem;
+    box-sizing: border-box;
 }
 
 .about-content {
-    width: min(90%, 1000px);
+    width: 100%;
+    max-width: 1000px;
     text-align: center;
     color: white;
-    padding: 3rem 2rem;
+    padding: 2rem 1rem;
     background-color: rgba(0, 0, 0, .6);
     border-radius: 12px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, .3);
 }
 
 h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    margin-bottom: 2rem;
+    font-size: clamp(1.8rem, 6vw, 3.5rem);
+    margin-bottom: 1.5rem;
     font-weight: 900;
     letter-spacing: .5px;
 }
 
 .about-description p {
-    font-size: clamp(.9rem, 3vw, 1.2rem);
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
+    font-size: clamp(.9rem, 3.5vw, 1.2rem);
+    line-height: 1.6;
+    margin-bottom: 1rem;
     color: rgba(255, 255, 255, 0.85);
 }
 
 .skills-container {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
 }
 
 .skills-container h2 {
-    font-size: clamp(1.5rem, 4vw, 2.5rem);
-    margin-bottom: 1.5rem;
+    font-size: clamp(1.4rem, 5vw, 2.5rem);
+    margin-bottom: 1.2rem;
     color: #7D3C98;
 }
 
 .skills-grid {
-  display: grid;
-  gap: 1rem;
-}
-
-@media (min-width: 1200px) {
-  .skills-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (min-width: 768px) and (max-width: 1199px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 767px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
+    display: grid;
+    gap: .75rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 
 .skill-item {
     background-color: rgba(125, 60, 152, .2);
     border: 1px solid rgba(125, 60, 152, .5);
-    padding: 1rem;
+    padding: .875rem;
     border-radius: 6px;
     transition: all .3s ease;
+    text-align: center;
 }
 
 .skill-item:hover {
     transform: scale(1.05);
     background-color: rgba(125, 60, 152, .4);
     box-shadow: 0 4px 15px rgba(125, 60, 152, .4);
+}
+
+@media (max-width: 480px) {
+    .about-content {
+        padding: 1.5rem .75rem;
+    }
+
+    h1 {
+        font-size: clamp(1.5rem, 7vw, 3rem);
+    }
+
+    .about-description p {
+        font-size: clamp(.85rem, 4vw, 1rem);
+        line-height: 1.5;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
 </style>
